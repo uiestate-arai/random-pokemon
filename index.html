@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ランダムポケモン</title>
+  <meta name="description" content="ボタンを押すとランダムなポケモンが表示されます（PokeAPI使用）" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>ランダム<span>ポケモン</span></h1>
+      <p class="sub">ボタンを押すと、ランダムなポケモンが出てくるよ</p>
+    </header>
+
+    <section class="card" id="card" aria-live="polite">
+      <div class="card-glow" aria-hidden="true"></div>
+      <div class="art-wrap">
+        <img id="art" class="art" alt="" width="320" height="320" hidden />
+        <div id="placeholder" class="placeholder" aria-hidden="true">
+          <div class="ball"></div>
+        </div>
+      </div>
+
+      <div class="info" id="info" hidden>
+        <p class="dex" id="dex"></p>
+        <h2 class="name" id="name"></h2>
+        <p class="name-en" id="nameEn"></p>
+        <p class="genus" id="genus"></p>
+        <ul class="types" id="types"></ul>
+        <dl class="measure">
+          <div><dt>たかさ</dt><dd id="height"></dd></div>
+          <div><dt>おもさ</dt><dd id="weight"></dd></div>
+        </dl>
+        <ul class="stats" id="stats"></ul>
+        <p class="flavor" id="flavor"></p>
+      </div>
+
+      <p class="intro" id="intro">下のボタンを押してね！</p>
+      <p class="error" id="error" role="alert" hidden></p>
+    </section>
+
+    <button class="draw-btn" id="drawBtn" type="button">
+      <span class="btn-ball" aria-hidden="true"></span>
+      <span class="btn-label">ポケモンを出す</span>
+    </button>
+    <p class="hint">スペースキーでも出せます</p>
+
+    <footer class="foot">
+      データ: <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokeAPI</a> ／
+      ポケモンは任天堂・クリーチャーズ・ゲームフリークの商標です。非公式ファンサイト。
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
